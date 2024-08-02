@@ -2,17 +2,16 @@
     const BASE_PATH = __DIR__ . '/../';
     require BASE_PATH . 'functions.php';
 
+    // DB
     require('../Core/Database.php');
     $config = require base_path('/config/config.php');
     $db = new Database($config['database']);
 
-    $routes = [
-        '/' => '../views/home.view.php',
-        '/register' => '../views/register.view.php',
-    ];
 
+    // ROUTER
+    require('../Core/Router.php');
+    $router = new Router();
+    require base_path('routes.php');
     $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
-
-    if (array_key_exists($uri, $routes)) {
-        require($routes[$uri]);
-    }
+    $method = $_POST['method'] ?? $_SERVER['REQUEST_METHOD'];
+    $router->route($uri, $method);
