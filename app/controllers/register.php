@@ -1,15 +1,36 @@
 <?php
 
 $email = $_POST['register_email'];
-$user_name = $_POST['register_user_name'];
+$username = $_POST['register_username'];
 $password = $_POST['register_password'];
     
 // DB
 require('../Core/Database.php');
 $config = require base_path('/config/config.php');
 $db = new Database($config['database']);
-$sql = "INSERT INTO users (email, user_name, password) VALUES (:email, :user_name, :password)";
 
-$db->create($sql, ['email' => $email, 'user_name' => $user_name, 'password' => $password]);
+$errors = [];
+
+$sql_email = "SELECT * FROM users WHERE email = :email";
+$sql_username = "SELECT * FROM users WHERE username = :username";
+
+$sql_email_check = $db->queryOne($sql_email, ['email' => $email]);
+$sql_username_check = $db->queryOne($sql_username, ['username' => $username]);
+
+if ($sql_email_check) {
+    $errors['email'] = 'Email already exists!';
+    view('register.view.php', ['errors' => $errors]);
+    exit();
+}
+
+if ($sql_username_check) {
+    $errors['username'] = 'Username already exists!';
+    view('register.view.php', ['errors' => $errors]);
+    exit();
+}
+
+$sql_create = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";
+
+$db->create($sql_create, ['email' => $email, 'username' => $username, 'password' => password_hash($password, PASSWORD_BCRYPT)]);
 header('location: /');
 exit();
