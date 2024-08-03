@@ -1,5 +1,4 @@
 <?php
-
 $email = $_POST['login_email'];
 $password = $_POST['login_password'];
 // DB
@@ -18,7 +17,7 @@ if (!$user) {
     view('login.view.php', ['errors' => $errors]);
     exit();
 }
-// login
+// Login
 if (!password_verify($password, $user['password'])) {
     $errors['password'] = 'Password is incorrect!';
     view('login.view.php', ['errors' => $errors]);
