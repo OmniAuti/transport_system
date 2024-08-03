@@ -14,17 +14,25 @@ class Database {
         $this->statement->execute($params);
         return $this->statement->fetchAll();
     }
-    
     public function queryOne($query, $params = []) {
         $this->statement = $this->connection->prepare($query);
         $this->statement->execute($params);
         return $this->statement->fetch();
     }
-
     public function create($query, $params = []) {
         $this->statement = $this->connection->prepare($query);
         return $this->statement->execute($params);
     }
-
-
+    public function post($query, $params = []) {
+        $this->statement = $this->connection->prepare($query);
+        return $this->statement->execute($params);
+    }
+    public function put($query, $params = []) {
+        $this->statement = $this->connection->prepare($query);
+        return $this->statement->execute($params);
+    }
+    public function delete($query, $params = []) {
+        $this->statement = $this->connection->prepare($query);
+        return $this->statement->execute($params);
+    }
 }
