@@ -1,7 +1,6 @@
-<?php
-    view('partials/header.partial.php', ['title' => 'Login']);
-?>
-
+    <?php
+        view('partials/header.partial.php', ['title' => 'Login']);
+    ?>
     <h1>Login</h1>
     <form action="/login" method="POST">
         <div>

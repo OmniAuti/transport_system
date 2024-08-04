@@ -1,7 +1,6 @@
 <?php
-    view('partials/header.php', ['title' => 'Home']);
+    view('partials/header.partial.php', ['title' => 'Home']);
 ?>
-
     <h1>Home</h1>
 </body>
 </html>
