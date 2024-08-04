@@ -1,5 +1,6 @@
 <?php
 
+namespace Core;
 
 class Router {
     public $routes = [];
@@ -11,6 +12,7 @@ class Router {
             'method' => "GET",
         ];
     }
+
     public function post($uri, $controller) {
         return $this->routes[] = [
             'uri' => $uri,

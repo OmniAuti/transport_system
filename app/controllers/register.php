@@ -3,7 +3,7 @@ $email = $_POST['register_email'];
 $username = $_POST['register_username'];
 $password = $_POST['register_password'];
 // DB
-require('../Core/Database.php');
+use Core\Database;
 $config = require base_path('/config/config.php');
 $db = new Database($config['database']);
 // ERRORS
