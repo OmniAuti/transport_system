@@ -3,8 +3,10 @@
     require BASE_PATH . 'functions.php';
     spl_autoload_register(function($class) {
         $class = str_replace('\\', '/', $class);
+        // dd($class);
          require base_path($class.'.php');
     });
+    require base_path('bootstrap.php');
     // ROUTER
     use Core\Router;
     $router = new Router();

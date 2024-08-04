@@ -1,11 +1,12 @@
 <?php
+
+use Core\App;
+
 $email = $_POST['register_email'];
 $username = $_POST['register_username'];
 $password = $_POST['register_password'];
 // DB
-use Core\Database;
-$config = require base_path('/config/config.php');
-$db = new Database($config['database']);
+$db = App::getContainer()->resolve('database');
 // ERRORS
 $errors = [];
 // CHECK QUERY
