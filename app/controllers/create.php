@@ -12,3 +12,4 @@ $sql = "INSERT INTO schedule (pickup_time, dropoff_time, userID) VALUES (:pickup
 $db->create($sql, ['pickup_time' => $pickup_time, 'dropoff_time' => $dropoff_time, 'userID' => $userID]);
 
 header('location: /');
+exit();

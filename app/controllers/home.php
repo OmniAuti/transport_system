@@ -9,4 +9,4 @@ $sql = "SELECT * FROM schedule";
 $results = $db->queryAll($sql);
 
 view('home.view.php', ['schedules' => $results]);
-
+exit();

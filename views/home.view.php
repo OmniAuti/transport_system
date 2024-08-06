@@ -18,7 +18,7 @@
                 // BLOCK OUT TIMES WHERE THERE IS NO AVAILABILITY
         ?>
 
-                <li><a href="schedule?id=<?= $schedule['schedule_id'] ?>"><?= $pickup_date ?> at <?= $pickup_time ?></a></li>
+                <li><a href="schedule?pi=<?= $schedule['schedule_id'] ?>"><?= $pickup_date ?> at <?= $pickup_time ?></a></li>
 
         <?php
             endforeach;
@@ -39,7 +39,7 @@
                 // DRIVERS COULD BE ASSIGNED RANDOMLY BASED ON AVAILABILITY
                 // BLOCK OUT TIMES WHERE THERE IS NO AVAILABILITY
         ?>
-                <li><a href="schedule?id=<?= $schedule['schedule_id'] ?>"><?= $dropoff_date ?> at <?= $dropoff_time ?></a></li>
+                <li><a href="schedule?di=<?= $schedule['schedule_id'] ?>"><?= $dropoff_date ?> at <?= $dropoff_time ?></a></li>
         <?php
             endforeach;
         ?>

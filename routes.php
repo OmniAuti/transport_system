@@ -3,6 +3,8 @@
 // $router->get('/', '../views/home.view.php');
 $router->get('/', '../app/controllers/home.php');
 
+$router->get('/schedule', '../app/controllers/single.php');
+
 $router->post('/create', '../app/controllers/create.php');
 
 $router->get('/create', '../views/create.view.php');
