@@ -2,7 +2,6 @@
 
 use Core\App;
 
-
 $db = App::getContainer()->resolve('database');
 
 $sql = "SELECT * FROM schedule";

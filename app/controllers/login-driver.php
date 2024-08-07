@@ -5,11 +5,10 @@ $email = $_POST['login_email'];
 $password = $_POST['login_password'];
 // DB
 $db = App::getContainer()->resolve('database');
-
 // ERRORS
 $errors = [];
 // CHECK QUERY
-$sql_user_check = "SELECT * FROM users WHERE email = :email";
+$sql_user_check = "SELECT * FROM employees WHERE email = :email";
 // CHECK
 $user = $db->queryOne($sql_user_check, ['email' => $email]);
 //

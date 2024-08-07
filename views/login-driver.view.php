@@ -1,11 +1,10 @@
-    <?php
+<?php
         view('partials/header.partial.php', ['title' => 'Login']);
     ?>
-    
     <h1>Login</h1>
-    <form action="/login" method="POST">
+    <form action="/login-driver" method="POST">
         <div>
-            <input placeholder="Use Email" type="email" name="login_email" id="">
+            <input placeholder="Email" type="email" name="login_email" id="">
         </div>
         <div>
             <input placeholder="Password" type="password" name="login_password" id="">
@@ -14,7 +13,7 @@
             <input type="submit" value="Login">
         </div>
         <div>
-            <a href="/login-driver">Are you a driver?</a>
+            <a href="/login">Are you a rider?</a>
         </div>
         <div>
             <?php if (isset($errors['user']))  echo $errors['user']; ?>
