@@ -24,6 +24,7 @@ if (!password_verify($password, $user['password'])) {
     view('login.view.php', ['errors' => $errors]);
     exit();
 }
-
+//
+login_user($user);
 header('location: /');
 exit();

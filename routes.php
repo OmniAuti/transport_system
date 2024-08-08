@@ -14,6 +14,8 @@ $router->get('/login-driver', '../views/login-driver.view.php');
 $router->post('/login', '../app/controllers/login.php');
 $router->post('/login-driver', '../app/controllers/login-driver.php');
 
+$router->get('/logout', '../app/controllers/logout.php');
+
 $router->get('/register', '../views/register.view.php');
 $router->get('/register-driver', '../views/register-driver.view.php');
 

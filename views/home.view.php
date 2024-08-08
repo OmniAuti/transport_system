@@ -2,6 +2,11 @@
     view('partials/header.partial.php', ['title' => 'Home']);
 ?>
     <h1>Home</h1>
+    <?php
+    if (isset($_SESSION['user'])) {
+        echo($_SESSION['user']['username']);
+    }
+    ?>
     <p>Pickups Needed</p>
     <ul>
         <?php
