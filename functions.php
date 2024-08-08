@@ -18,6 +18,10 @@ function login_user($user) {
     $_SESSION['user'] = ['username' => $user['username']];
     session_regenerate_id();
 }
+function login_driver($user) {
+    $_SESSION['user'] = ['name' => $user['name']];
+    session_regenerate_id();
+}
 
 function logout() {
     session_destroy();

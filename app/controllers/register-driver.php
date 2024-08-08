@@ -23,5 +23,6 @@ if ($sql_email_check) {
 $sql_create = "INSERT INTO employees (email, name, password) VALUES (:email, :name, :password)";
 
 $db->create($sql_create, ['email' => $email, 'name' => $name, 'password' => password_hash($password, PASSWORD_BCRYPT)]);
+login_driver($user);
 header('location: /');
 exit();

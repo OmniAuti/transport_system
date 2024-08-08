@@ -24,5 +24,6 @@ if (!password_verify($password, $user['password'])) {
     exit();
 }
 
+login_driver($user);
 header('location: /');
 exit();
