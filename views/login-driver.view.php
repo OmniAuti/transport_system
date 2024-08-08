@@ -1,7 +1,7 @@
-<?php
-        view('partials/header.partial.php', ['title' => 'Login']);
+    <?php
+        view('partials/header.partial.php', ['title' => 'Driver Login']);
     ?>
-    <h1>Login</h1>
+    <h1>Driver Login</h1>
     <form action="/login-driver" method="POST">
         <div>
             <input placeholder="Email" type="email" name="login_email" id="">
