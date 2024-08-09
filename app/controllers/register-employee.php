@@ -21,8 +21,9 @@ if ($sql_email_check) {
 }
 // CREATED
 $sql_create = "INSERT INTO employees (email, name, password) VALUES (:email, :name, :password)";
-
 $db->create($sql_create, ['email' => $email, 'name' => $name, 'password' => password_hash($password, PASSWORD_BCRYPT)]);
-login_driver($user);
+$sql_employee = "SELECT * FROM employees WHERE email = :email";
+$employee = $db->queryOne($sql_employee, ['email' => $email]);
+login_employee($employee);
 header('location: /');
 exit();

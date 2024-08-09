@@ -6,7 +6,7 @@
     <div>   
         <form action="/create" method="post">
             <!--WILL SESSION IN THE EMPLOYEE HERE-->
-            <input type="hidden" name="user" value="1">
+            <input type="hidden" name="customer" value="1">
             <input required type="datetime-local" name="pickup" id="">
             <input required type="datetime-local" name="dropoff" id="">
             <input type="submit" value="Create">

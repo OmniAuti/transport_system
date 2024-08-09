@@ -16,7 +16,7 @@ if (isset($_GET['pi'])) {
     $header = "Dropoff";
 }
 
-$user = $db->queryOne('SELECT * FROM users WHERE userID = :userID', ['userID' => $result['userID']]);
+$customer = $db->queryOne('SELECT * FROM customers WHERE userID = :userID', ['userID' => $result['userID']]);
 
-view('single.view.php', ['schedule' => $schedule, 'header' => $header, 'user' => $user]);
+view('single.view.php', ['schedule' => $schedule, 'header' => $header, 'customer' => $customer]);
 exit();

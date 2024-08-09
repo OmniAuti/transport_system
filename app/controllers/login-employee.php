@@ -10,20 +10,20 @@ $errors = [];
 // CHECK QUERY
 $sql_user_check = "SELECT * FROM employees WHERE email = :email";
 // CHECK
-$user = $db->queryOne($sql_user_check, ['email' => $email]);
+$employee = $db->queryOne($sql_user_check, ['email' => $email]);
 //
-if (!$user) {
-    $errors['user'] = 'Email does not exist!';
-    view('login.view.php', ['errors' => $errors]);
+if (!$employee) {
+    $errors['email'] = 'Email does not exist!';
+    view('login-employee.view.php', ['errors' => $errors]);
     exit();
 }
 // Login
-if (!password_verify($password, $user['password'])) {
+if (!password_verify($password, $employee['password'])) {
     $errors['password'] = 'Password is incorrect!';
-    view('login.view.php', ['errors' => $errors]);
+    view('login-employee.view.php', ['errors' => $errors]);
     exit();
 }
 
-login_driver($user);
+login_employee($employee);
 header('location: /');
 exit();

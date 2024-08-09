@@ -4,8 +4,8 @@
 <body>
     <h1>Home</h1>
     <?php
-    if (isset($_SESSION['user']['username'])) {
-        echo($_SESSION['user']['username']);
+    if (isset($_SESSION['customer']['name'])) {
+        echo($_SESSION['customer']['name']);
     }
     ?>
     

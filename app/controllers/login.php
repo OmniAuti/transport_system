@@ -6,25 +6,26 @@ $password = $_POST['login_password'];
 // DB
 $db = App::getContainer()->resolve('database');
 
+
 // ERRORS
 $errors = [];
 // CHECK QUERY
-$sql_user_check = "SELECT * FROM users WHERE email = :email";
+$sql_customer_check = "SELECT * FROM customers WHERE email = :email";
 // CHECK
-$user = $db->queryOne($sql_user_check, ['email' => $email]);
+$customer = $db->queryOne($sql_customer_check, ['email' => $email]);
 //
-if (!$user) {
-    $errors['user'] = 'Email does not exist!';
+if (!$customer) {
+    $errors['email'] = 'Email does not exist!';
     view('login.view.php', ['errors' => $errors]);
     exit();
 }
 // Login
-if (!password_verify($password, $user['password'])) {
+if (!password_verify($password, $customer['password'])) {
     $errors['password'] = 'Password is incorrect!';
     view('login.view.php', ['errors' => $errors]);
     exit();
 }
 //
-login_user($user);
-header('location: /home-user.view.php');
+login_customer($customer);
+header('location: /');
 exit();

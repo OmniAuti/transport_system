@@ -3,7 +3,7 @@
 ?>
 <body>
     <h1>Driver Register</h1>
-    <form action="/register-driver" method="POST">
+    <form action="/register-employee" method="POST">
         <div>
             <input placeholder="Email" type="email" name="register_email" id="">
         </div>
@@ -20,5 +20,8 @@
             <?php if (isset($errors['email']))  echo $errors['email']; ?>
         </div>
     </form>
+    <div>
+        <a href="/register">Are you a Customer?</a>
+    </div>
 </body>
 </html>

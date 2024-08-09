@@ -14,10 +14,10 @@
             <input type="submit" value="Login">
         </div>
         <div>
-            <a href="/login-driver">Are you a driver?</a>
+            <a href="/login-employee">Are you an Employee?</a>
         </div>
         <div>
-            <?php if (isset($errors['user']))  echo $errors['user']; ?>
+            <?php if (isset($errors['email']))  echo $errors['email']; ?>
             <?php if (isset($errors['password']))  echo $errors['password']; ?>
         </div>
     </form>

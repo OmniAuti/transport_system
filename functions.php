@@ -14,12 +14,12 @@ function view($path, $attributes = []) {
     require base_path('views/'.$path);
 }
 
-function login_user($user) {
-    $_SESSION['user'] = ['username' => $user['username']];
+function login_customer($customer) {
+    $_SESSION['customer'] = ['name' => $customer['name'], 'email' => $customer['email'], 'id' => $customer['id']];
     session_regenerate_id();
 }
-function login_driver($user) {
-    $_SESSION['user'] = ['name' => $user['name']];
+function login_employee($employee) {
+    $_SESSION['employee'] = ['name' => $employee['name'], 'email' => $employee['email'], 'id' => $employee['id'], 'position' => $employee['position']];
     session_regenerate_id();
 }
 
