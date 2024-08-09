@@ -4,7 +4,7 @@
     $date = substr($schedule, 0, $t);
     $time = substr($schedule, $t + 1, strlen($schedule));
 ?>
-
+<body>
 <h1><?= $header ?></h1>
 
 <div>

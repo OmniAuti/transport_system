@@ -26,5 +26,5 @@ if (!password_verify($password, $user['password'])) {
 }
 //
 login_user($user);
-header('location: /');
+header('location: /home-user.view.php');
 exit();

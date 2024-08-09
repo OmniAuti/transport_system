@@ -1,6 +1,7 @@
 <?php
     view('partials/header.partial.php', ['title' => 'Create']);
 ?>
+<body>
     <h1>Create</h1>
     <div>   
         <form action="/create" method="post">

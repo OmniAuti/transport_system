@@ -1,7 +1,7 @@
 <?php
     view('partials/header.partial.php', ['title' => 'Register']);
 ?>
-
+<body>
     <h1>Register</h1>
     <form action="/register" method="POST">
         <div>

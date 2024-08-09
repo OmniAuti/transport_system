@@ -1,7 +1,7 @@
 <?php
     view('partials/header.partial.php', ['title' => 'Register Driver']);
 ?>
-
+<body>
     <h1>Driver Register</h1>
     <form action="/register-driver" method="POST">
         <div>

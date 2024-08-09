@@ -10,4 +10,4 @@
         require_once('nav.partial.php');
     ?>
 </header>
-<body>
+

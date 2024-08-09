@@ -6,15 +6,11 @@
     if (isset($_SESSION['user']['username'])) {
         echo($_SESSION['user']['username']);
     }
-    if (isset($_SESSION['user']['name'])) {
-        echo($_SESSION['user']['name']);
-    }
     ?>
     <p>Pickups Needed</p>
     <ul>
         <?php
             foreach ($schedules as $schedule):
-
                 $pickup = $schedule['pickup_time'];
                 $t = strpos($pickup, 'T') + 1;
                 $pickup_time = substr($pickup, $t, strlen($pickup));

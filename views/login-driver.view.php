@@ -1,6 +1,7 @@
     <?php
         view('partials/header.partial.php', ['title' => 'Driver Login']);
     ?>
+    <body>
     <h1>Driver Login</h1>
     <form action="/login-driver" method="POST">
         <div>
