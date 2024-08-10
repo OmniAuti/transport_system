@@ -7,6 +7,8 @@
     if (isset($_SESSION['user']['name'])) {
         echo($_SESSION['user']['name']);
     }
+
+    // NEEDS ASSIGNED PICKUPS/DROPOFFS
     ?>
    
 </body>
